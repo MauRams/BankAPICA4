@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.jerseytutorial.resources;
+package com.mycompany.bankapi.resources;
 
-import com.mycompany.jerseytutorial.model.Message;
-import com.mycompany.jerseytutorial.services.MessageService;
+import com.mycompany.bankapi.model.Message;
+import com.mycompany.bankapi.services.MessageService;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
