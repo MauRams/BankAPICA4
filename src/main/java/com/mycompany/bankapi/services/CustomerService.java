@@ -29,9 +29,12 @@ public class CustomerService {
         Accounts a4 = new Accounts(99912, "S", 102, 1800.12);
         
         acc.add(a1);
+        acc.add(a2);
+        acc.add(a3);
+        acc.add(a4);
         
-        Customer c1 = new Customer(101,"Maurice", "Swords, Dublin",  "maur@email.com", "bankaccount", acc);
-        Customer c2 = new Customer(102,"Arezki", "Clontarf, Dublin", "arezki@email.com", "bankaccount",acc);
+        Customer c1 = new Customer(1,"Maurice", "Swords, Dublin",  "maur@email.com", "bankaccount", acc);
+        Customer c2 = new Customer(2,"Arezki", "Clontarf, Dublin", "arezki@email.com", "bankaccount",acc);
         
        
         list.add(c1);

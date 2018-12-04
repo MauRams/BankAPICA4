@@ -5,9 +5,9 @@
  */
 package com.mycompany.bankapi.resources;
 
-import com.mycompany.bankapi.model.Accounts;
 import com.mycompany.bankapi.model.Customer;
 import com.mycompany.bankapi.services.CustomerService;
+import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -18,24 +18,30 @@ import javax.ws.rs.core.MediaType;
 /**
  *
  * @author Maurice
- */@Path("/customers")
+ */@Path("/bank")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CustomerResource {
     
     CustomerService cService = new CustomerService();
     
+
+       @GET
+       @Path("/customers")
+       public List<Customer> getCustomers() {
+            return cService.getAllCustomers();
+       }
+       
     //get the customer by id
     @GET
     @Path("/{customerId}")
     public Customer getCustomer(@PathParam("customerId") int id) {
         return cService.getCustomer(id);
     }
-    
-    @GET
-    @Path("/{customerId}/accounts/{accountId}/balance")
-	public Accounts getCustomer(@PathParam("customerId") int id, @PathParam("accountId") int accId) {
-		return cService.getBalanceOfAccount(id, accId);
-	}
+//    @GET
+//    @Path("/{customerId}/accounts/{accountId}/balance")
+//	public Accounts getCustomer(@PathParam("customerId") int id, @PathParam("accountId") int accId) {
+//		return cService.getBalanceOfAccount(id, accId);
+//	}
     
 }
